@@ -1,0 +1,11 @@
+sequenceDiagram
+    participant browser
+    participant server
+
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+    Note right of browser: The browser uses the server's fetched JS code to create a new note, update the notes and redraw them
+    Note right of browser: The browser then sends a POST request to the server containing the new note
+    activate server
+    server-->>browser: HTTP 201 Created Response
+    deactivate server
+
